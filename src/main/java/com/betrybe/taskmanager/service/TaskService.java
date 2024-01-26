@@ -5,7 +5,10 @@ package com.betrybe.taskmanager.service;
  */
 
 import com.betrybe.taskmanager.database.FakeTaskDatabase;
+<<<<<<< HEAD
 import com.betrybe.taskmanager.dto.TaskCreationDto;
+=======
+>>>>>>> b9a0fbd4dc6feddc6b9fc003e0a6e0a304617761
 import com.betrybe.taskmanager.dto.TaskDto;
 import com.betrybe.taskmanager.model.TaskModel;
 import java.util.ArrayList;
@@ -46,6 +49,7 @@ public class TaskService {
     }
     return taskDtos;
   }
+<<<<<<< HEAD
 
   /**
    * Task get by id method.
@@ -69,4 +73,5 @@ public class TaskService {
 
     return this.repository.createTask(request.title(), request.description(), request.ownerName());
   }
+
 }
