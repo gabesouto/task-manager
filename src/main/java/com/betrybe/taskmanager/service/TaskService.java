@@ -5,6 +5,7 @@ package com.betrybe.taskmanager.service;
  */
 
 import com.betrybe.taskmanager.database.FakeTaskDatabase;
+import com.betrybe.taskmanager.dto.TaskCreationDto;
 import com.betrybe.taskmanager.dto.TaskDto;
 import com.betrybe.taskmanager.model.TaskModel;
 import java.util.ArrayList;
@@ -44,5 +45,28 @@ public class TaskService {
       taskDtos.add(taskDto);
     }
     return taskDtos;
+  }
+
+  /**
+   * Task get by id method.
+   */
+
+  public TaskDto getTaskById(String id) {
+    TaskModel task = this.repository.getTaskById(id);
+    if (task == null) {
+      return null;
+    }
+
+    return new TaskDto(
+        task.getId(),
+        task.getTitle(),
+        task.getDescription(),
+        task.getOwnerName(),
+        task.getIsCompleted());
+  }
+
+  public TaskModel createTask(TaskCreationDto request) {
+
+    return this.repository.createTask(request.title(), request.description(), request.ownerName());
   }
 }
