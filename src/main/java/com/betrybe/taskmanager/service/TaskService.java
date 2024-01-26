@@ -70,4 +70,12 @@ public class TaskService {
     return this.repository.createTask(request.title(), request.description(), request.ownerName());
   }
 
+  public TaskModel updateTaskStatus(String id) {
+    return this.repository.setTaskAsCompleted(id);
+  }
+
+  public TaskModel deleteTask(String id) {
+    return this.repository.removeTaskById(id);
+  }
+
 }
