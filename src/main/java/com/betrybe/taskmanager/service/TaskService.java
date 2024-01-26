@@ -49,7 +49,6 @@ public class TaskService {
     }
     return taskDtos;
   }
-<<<<<<< HEAD
 
   /**
    * Task get by id method.
